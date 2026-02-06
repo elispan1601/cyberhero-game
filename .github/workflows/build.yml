@@ -21,8 +21,7 @@ jobs:
         run: pip install pyinstaller
 
       - name: Собрать .exe
-        run: pyinstaller --noconsole --onefile Игра.py
-
+       run: pyinstaller --noconsole --onefile Игра.py --add-data "splash.png;." --add-data "bg.png;." --add-data "hero.png;." --add-data "start_btn.png;." --add-data "continue_btn.png;." --add-data "back_btn.png;." --add-data "home_btn.png;." --add-data "exit_btn.png;." --add-data "win_bg.png;." --add-data "lose_bg.png;."
       - name: Загрузить exe
         uses: actions/upload-artifact@v4
         with:
